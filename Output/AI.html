@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+
+  <h3>AI</h3>
+<p>While moving through the house, the player will have to contend with various computer-controlled AI players. A director will be responsible for the following:</p>
+<ul>
+<li>Adding AI elements to the game.</li>
+<li>Figuring out how much HP the AI elements have.</li>
+<li>Calculating the current menace. How much the player is under.</li>
+<li>Backing off menace when required.</li>
+<li>Increasing menace when required</li>
+</ul>
+<p>Pressure at any time in the game.  When the player is under a higher amount of &quot;pressure&quot;, they will have less ability to steal loot; however, when the &quot;pressure&quot; is reduced, the player will have more scope and space to complete the game's actions.</p>
+<h4>AI Type: Ghosts</h4>
+<p>The first level adversary of the game that the player will face is the ghost. These phantasms represent the stock enemy of the player.</p>
+<ul>
+<li>Ears. In this world, ghosts have ears. When a player is searching for items, this will make noise</li>
+<li>Sight Cone. They will have limited vision in front of them.</li>
+</ul>
+<p>Ghost Attributes:</p>
+<ul>
+<li>Hitpoints: How many hit points a ghost has before it dies</li>
+<li>Aggression: How aggressive the ghost is.</li>
+</ul>
+<h4>AI Type: Cops</h4>
+<p>Will activity hunt the player and arrest them to end the game. When one cop spots the player, he will alert the others via radio. These cops may start activity hunting the player depending on their aggressiveness and menace.</p>
+<h4>AI Type: Residents</h4>
+<p>Will walk in their house from room to room. Not activity looking for the player. Will call the police if they see the player.  This will then cause the police to spawn in the current map and start hunting the player.</p>
+<h4>Jobs</h4>
+<p>Jobs will happen with a tree. More advanced jobs will be added to the tree when game events happen so enemies will do new things to the player.</p>
+<ul>
+<li>Patrolling. While in this mode, enemies will move around across their nav meshes with no patterns.</li>
+<li>Attacking: Enemy has its sensors activated and is currently trying to attack the player.</li>
+<li>Swarming: Ghosts will look to group up against the player. This node will only be added when there is a low level of menace.</li>
+</ul>
+<h4>Menance</h4>
+<p>A menace value will be calculated at all times to tell the AI director how to build up the AI and what enemies to inject and what hitpoints and aggression the enemies have. Factors that will affect the &quot;menace score&quot; are:</p>
+<ul>
+<li>Current enemy count on the map</li>
+<li>Current Player Health</li>
+<li>Player Powerups
+During the game, the menace factor will modulate up and down. This modulation will be handled by a leaky bucket algorithm. The higher the player scores, the more the bucket will fill. The more full the bucket, the harder it will be to complete game goals. Menace floor value will increase as game time progresses, meaning that the game will get harder and harder the more further the player can proceed.</li>
+</ul>
+
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
